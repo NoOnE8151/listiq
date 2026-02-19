@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroSection = () => {
   return (
-    <div className='flex md:flex-row flex-col items-start h-full gap-5 md:pt-[7rem] pt-[3rem]'>
+    <div id='hero' className='flex md:flex-row flex-col h-full gap-5 md:pt-[8.5rem] pt-[4rem]'>
         <div className='flex flex-col gap-5 md:w-[60%]'>
             <h2 className='md:text-5xl text-2xl font-semibold leading-normal'>
                 Rank Your Amazon/Flipkart Products on Top
