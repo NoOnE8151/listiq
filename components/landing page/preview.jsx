@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const PreviewSection = () => {
   return (
@@ -19,7 +20,7 @@ const PreviewSection = () => {
 
       </div>
 
-      <button className='bg-element text-white font-semibold px-22 py-3 rounded-lg text-xl'>Try for free</button>
+      <Link href='/sign-up' className='bg-element text-white font-semibold px-22 py-3 rounded-lg text-xl'>Try for free</Link>
 
     </section>
   )

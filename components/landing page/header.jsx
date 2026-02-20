@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Header = () => {
   return (
@@ -11,8 +12,8 @@ const Header = () => {
         </h1>
 
         <div className='flex items-center gap-5'>
-            <button className='bg-element text-white px-7 py-2 rounded-full font-semibold cursor-pointer md:block hidden'>SignUp</button>
-            <button className='cursor-pointer md:text-foreground text-white md:bg-transparent bg-element md:px-0 px-5 md:py-0 py-1 rounded-full font-semibold'>Login</button>
+            <Link href='/sign-up' className='bg-element text-white px-7 py-2 rounded-full font-semibold cursor-pointer md:block hidden'>SignUp</Link>
+            <Link href='/sign-in' className='cursor-pointer md:text-foreground text-white md:bg-transparent bg-element md:px-0 px-5 md:py-0 py-1 rounded-full font-semibold'>Login</Link>
         </div>
     </div>
   )

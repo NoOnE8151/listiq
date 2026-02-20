@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const HeroSection = () => {
   return (
@@ -8,7 +9,7 @@ const HeroSection = () => {
                 Rank Your Amazon/Flipkart Products on Top
             </h2>
             <p className='md:text-2xl text-sm text-muted-foreground'>Enter basic product details and get AI-powered SEO optimized, ready to paste listings in seconds</p>
-            <button className='text-center md:text-xl text-sm bg-element text-white md:w-1/2 px-7 md:py-4 py-3 cursor-pointer rounded-md font-semibold'>Create 1st Listing - Free</button>
+            <Link href='/sign-up' className='text-center md:text-xl text-sm bg-element text-white md:w-1/2 px-7 md:py-4 py-3 cursor-pointer rounded-md font-semibold'>Create 1st Listing - Free</Link>
         </div>
 
         <div className='w-[40%] md:block hidden'>
