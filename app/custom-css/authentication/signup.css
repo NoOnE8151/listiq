@@ -1,0 +1,119 @@
+/* root */
+
+.cl-rootBox,
+.cl-cardBox {
+  width: 100%;
+}
+
+/* card */
+
+.cl-cardBox,
+.cl-card {
+  box-shadow: none;
+  background-color: #FBFDFF;
+}
+
+.cl-cardBox {
+  padding-top: 23px;
+  border-radius: 0%;
+}
+
+/* main */
+
+.cl-main {
+  padding-inline: 46px;
+  padding-top: 23px;
+}
+
+/* header */
+
+.cl-headerTitle {
+  font-size: 34px;
+  font-weight: 600;
+  font-family: var(--font-poppins);
+  /* color: transparent; */
+  position: relative;
+}
+
+/* .cl-headerTitle::after {
+  content: "Create Account";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-foreground);
+  white-space: nowrap;
+} */
+
+.cl-headerSubtitle {
+  font-size: 14px;
+  color: transparent;
+  position: relative;
+}
+
+.cl-headerSubtitle::after {
+  content: "Get started with your free account";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: var(--color-muted-foreground);
+}
+
+/* social auth */
+
+.cl-socialButtonsRoot {
+  box-shadow: none;
+}
+
+.cl-socialButtonsBlockButton {
+  padding-block: 13px;
+}
+
+/* form fields */
+
+.cl-formFieldRow__name {
+  display: none;
+  visibility: hidden;
+}
+
+.cl-formFieldLabel {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cl-formFieldInput {
+  padding-block: 26px;
+  padding-inline: 24px;
+  font-size: 18px;
+  border-radius: 13px;
+  border-color: rgba(63, 187, 235, 0.2);
+}
+
+.cl-formFieldInput:hover {
+  outline-color: #3FBBEB;
+  border: none;
+}
+
+.cl-formFieldInput:focus {
+  outline-color: #3FBBEB;
+  border: none;
+}
+
+/* primary button */
+
+.cl-formButtonPrimary {
+  padding-block: 12px;
+  font-size: 28px;
+  background: linear-gradient(to right, #3FBBEB, #189BFF);
+  font-family: var(--font-riot);
+}
+
+/* footer */
+
+.cl-footer {
+  display: none;
+  visibility: hidden;
+}

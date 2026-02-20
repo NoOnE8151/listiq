@@ -1,5 +1,8 @@
 import { riot, inter, poppins } from "./fonts/index";
 import "./globals.css";
+import "./custom-css/authentication/signup.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import { simple  } from '@clerk/themes'
 
 export const metadata = {
   title: {
@@ -47,12 +50,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${poppins.variable} ${riot.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider appearance={{ theme: simple }}>
+      <html lang="en" className="scroll-smooth">
+        <body
+          className={`${inter.variable} ${poppins.variable} ${riot.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
