@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const FeaturedSection = () => {
   return (
@@ -38,6 +39,8 @@ const FeaturedSection = () => {
           </p>
         </div>
       </div>
+
+      <Link href='/sign-up' className='btn-engage text-center md:text-xl text-sm bg-element text-white md:w-1/4 px-7 md:py-4 py-3 cursor-pointer rounded-md font-semibold'>Get Started</Link>
     </section>
   );
 };

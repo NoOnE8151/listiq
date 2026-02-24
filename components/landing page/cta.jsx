@@ -19,7 +19,7 @@ const CallToAction = () => {
         <div className='py-20 flex items-center flex-col gap-14'>
             <h4 className='text-4xl font-semibold'>Boost sales with <span className='font-riot'><span className='text-[#3FBBEB]'>List</span><span className='text-[#189BFF]'>IQ</span>.</span> Zero risk, instant results</h4>
 
-            <Link href='/sign-up' className='text-3xl bg-element font-semibold text-white px-20 cursor-pointer py-3 rounded-xl'>Start For Free</Link>
+            <Link href='/sign-up' className='btn-engage text-3xl bg-element font-semibold text-white px-20 cursor-pointer py-3 rounded-xl'>Start For Free</Link>
         </div>
     </section>
   )

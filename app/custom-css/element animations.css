@@ -1,0 +1,46 @@
+.btn-engage {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: 
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover */
+.btn-engage:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+/* Active */
+.btn-engage:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  filter: brightness(0.95);
+}
+
+/* Shine sweep */
+.btn-engage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-engage:hover::after {
+  left: 120%;
+}

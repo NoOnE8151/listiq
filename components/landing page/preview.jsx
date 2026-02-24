@@ -20,7 +20,7 @@ const PreviewSection = () => {
 
       </div>
 
-      <Link href='/sign-up' className='bg-element text-white font-semibold px-22 py-3 rounded-lg text-xl'>Try for free</Link>
+      <Link href='/sign-up' className='btn-engage bg-element text-white font-semibold px-22 py-3 rounded-lg text-xl'>Try for free</Link>
 
     </section>
   )

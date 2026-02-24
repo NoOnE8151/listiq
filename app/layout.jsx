@@ -1,6 +1,7 @@
 import { riot, inter, poppins } from "./fonts/index";
 import "./globals.css";
 import "./custom-css/authentication/signup.css";
+import "./custom-css/element animations.css"
 import { ClerkProvider } from "@clerk/nextjs";
 import { simple  } from '@clerk/themes'
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider appearance={{ theme: simple }}>
       <html lang="en" className="scroll-smooth">
         <body
+          id="top"
           className={`${inter.variable} ${poppins.variable} ${riot.variable} antialiased`}
         >
           {children}

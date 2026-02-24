@@ -12,6 +12,8 @@
   --color-foreground: var(--foreground);
   --color-muted-foreground: var(--muted-foreground);
   --color-element: #189BFF;
+  --color-element-hover: #0F85E6;
+  --color-element-active: #0F85E6;
 
   /* font families */
   --font-riot: var(--font-riot);

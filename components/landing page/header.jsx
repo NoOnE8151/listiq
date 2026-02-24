@@ -40,9 +40,9 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between">
       <SignedOut>
-        <div className="font-poppins font-medium text-xl md:block hidden">
+        <a href="#how-it-works" className="font-poppins font-medium text-xl md:block hidden">
           How it works?
-        </div>
+        </a>
       </SignedOut>
       <SignedIn>
         <div ref={dropdownRef} className="relative inline-block">
@@ -97,7 +97,7 @@ const Header = () => {
             </li>
             <li>
                 <SignOutButton>
-              <button className="w-full text-left px-5 py-3 text-red-500 hover:bg-red-50 transition-colors cursor-pointer">
+              <button onClick={()=> setIsOpen(false)} className="w-full text-left px-5 py-3 text-red-500 hover:bg-red-50 transition-colors cursor-pointer">
                 Log Out
               </button>
                 </SignOutButton>
