@@ -97,6 +97,14 @@ const ContactPage = () => {
               placeholder="Regarding pricing or features..."
               {...register("subject", {
                 required: "Subject is required",
+                minLength: {
+                    value: 6,
+                    message: 'Subject must be atleast 6 characters'
+                },
+                maxLength: {
+                    value: 200,
+                    message: 'Subject must be less than 200 characters'
+                }
               })}
               className="border border-gray-200 px-5 py-3 rounded-lg"
             />
@@ -119,6 +127,10 @@ const ContactPage = () => {
                   value: 10,
                   message: "Message must be at least 10 characters",
                 },
+                maxLength: {
+                    value: 800,
+                    message: "Message must be under 800 words"
+                }
               })}
               className="border border-gray-200 px-5 py-3 rounded-lg"
             />
@@ -132,7 +144,7 @@ const ContactPage = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-element text-white py-3 rounded-full font-semibold"
+            className={`bg-element hover:bg-element-hover active:bg-element-active btn-engage text-white py-3 rounded-lg font-semibold ${isSubmitting ? "cursor-not-allowed opacity-[70%]" : "cursor-pointer"}`}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
