@@ -6,15 +6,29 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { CirclePlus } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { SignOutButton } from "@clerk/nextjs";
+import getCredit from "@/utils/user/credit/get";
 
 const Header = () => {
   const { user, isLoaded } = useUser();
 
+  const [credit, setCredit] = useState({})
+
   useEffect(() => {
     if (user) {
-      console.log(user.username);
+      const cred = async () => {
+        const fetchedCred = await getCredit();
+        console.log('credits fetched: ', fetchedCred)
+        setCredit(fetchedCred.credit);
+      }
+      cred();
     }
   }, [user]);
+
+  useEffect(() => {
+    if(credit){
+      console.log('logging creding object', credit)
+    }
+  }, [credit])
 
   //handling user dropdown menu
   const [isOpen, setIsOpen] = useState(false);
@@ -107,7 +121,7 @@ const Header = () => {
       </SignedIn>
       <h1 className="font-riot text-3xl">
         <span className="text-[#3FBBEB]">List</span>
-        <span className="text-[#189BFF]">IQ</span>
+        <span className="text-element">IQ</span>
       </h1>
 
       <SignedOut>
@@ -130,7 +144,7 @@ const Header = () => {
       <SignedIn>
         <button className="flex items-center gap-3 cursor-pointer">
           <img src="/assets/elements/coin.svg" alt="credits" width={35} />
-          <div className="font-semibold text-xl">0.00</div>
+          <div className="font-semibold text-xl">{credit.balance || 0.00}</div>
           <div>
             <CirclePlus size={18} />
           </div>
