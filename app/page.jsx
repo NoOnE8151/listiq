@@ -10,10 +10,10 @@ import { ArrowUp } from "lucide-react";
 export default function Home() {
   return (
     <>
-      <header className="md:px-15 md:px-3 px-5 py-5">
+      <header className="md:px-15 px-5 py-5">
         <Header />
       </header>
-      <main className="md:px-15 md:px-3 px-5 py-5 flex flex-col gap-32">
+      <main className="md:px-15 px-5 py-5 flex flex-col gap-32">
         <HeroSection />
         <PreviewSection />
         <FeaturedSection />

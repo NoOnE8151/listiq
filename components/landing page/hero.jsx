@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const HeroSection = () => {
   return (
-    <div id='hero' className='flex md:flex-row flex-col h-full gap-5 md:pt-[8.5rem] pt-[4rem]'>
+    <div id='hero' className='flex md:flex-row flex-col h-full gap-5 md:pt-34 pt-16'>
         <div className='flex flex-col gap-5 md:w-[60%]'>
             <h2 className='md:text-5xl text-2xl font-semibold leading-normal'>
                 Rank Your Amazon/Flipkart Products on Top

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const PreviewSection = () => {
   return (
-    <section className='flex items-center flex-col gap-20 pt-[3rem]'>
+    <section className='flex items-center flex-col gap-20 pt-12'>
       <h3 className='text-5xl font-semibold'>Optimize in seconds with AI.</h3>
 
       <div className='flex items-center gap-10'>
