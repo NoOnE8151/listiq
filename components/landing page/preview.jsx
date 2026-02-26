@@ -15,7 +15,7 @@ const PreviewSection = () => {
         
         <div className='flex flex-col gap-5 items-center'>
           <h3 className='text-3xl font-semibold'>After</h3>
-        <img src="/assets/home/preview/before.png" alt="after using list iq" />
+        <img src="/assets/home/preview/after.png" alt="after using list iq" />
         </div>
 
       </div>
