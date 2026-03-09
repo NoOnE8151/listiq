@@ -6,7 +6,7 @@ export async function POST(req) {
 
     if (!name || !email || !subject || !message) {
       return new Response(
-        JSON.stringify({ error: "All fields required" }),
+        JSON.stringify({ error: "All fields requiredm (name, email, saubject, message" }),
         { status: 400 }
       );
     }

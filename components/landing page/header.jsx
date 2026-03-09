@@ -142,13 +142,13 @@ const Header = () => {
       </SignedOut>
 
       <SignedIn>
-        <button className="flex items-center gap-3 cursor-pointer">
+        <Link href={'/credits'} className="flex items-center gap-3 cursor-pointer">
           <img src="/assets/elements/coin.svg" alt="credits" width={35} />
           <div className="font-semibold text-xl">{credit.balance || 0.00}</div>
           <div>
             <CirclePlus size={18} />
           </div>
-        </button>
+        </Link>
       </SignedIn>
     </div>
   );

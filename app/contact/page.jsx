@@ -37,7 +37,7 @@ const ContactPage = () => {
           <h1 className="text-5xl font-semibold">
             Contact <span className="text-element">Us</span>
           </h1>
-          <div className="h-[3px] w-20 bg-element rounded-full"></div>
+          <div className="h-0.75 w-20 bg-element rounded-full"></div>
         </div>
 
         <form
@@ -144,7 +144,7 @@ const ContactPage = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`bg-element hover:bg-element-hover active:bg-element-active btn-engage text-white py-3 rounded-lg font-semibold ${isSubmitting ? "cursor-not-allowed opacity-[70%]" : "cursor-pointer"}`}
+            className={`bg-element hover:bg-element-hover active:bg-element-active btn-engage text-white py-3 rounded-lg font-semibold ${isSubmitting ? "cursor-not-allowed opacity-70" : "cursor-pointer"}`}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
@@ -154,7 +154,7 @@ const ContactPage = () => {
       {/* Success Modal */}
       {success && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
-          <div className="bg-white rounded-2xl p-10 w-[400px] flex flex-col gap-6 text-center shadow-lg">
+          <div className="bg-white rounded-2xl p-10 w-100 flex flex-col gap-6 text-center shadow-lg">
             <h3 className="text-2xl font-semibold">
               Message Sent Successfully
             </h3>

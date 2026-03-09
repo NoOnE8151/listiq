@@ -1,9 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Header from '@/components/landing page/header'
 import ProductListingForm  from '@/components/dashboard/ProductListing'
 import ListingOutput from '@/components/dashboard/ListingOutput'
 
 const ProductListing = () => {
+  const [generatedOutput, setGeneratedOutput] = useState({}) // this will store the generated listing output that is created in product listing form component.
   return (
     <div className='w-screen h-screen'>
       <header className='md:px-16 px-5 py-5 shadow sticky top-0 bg-background flex justify-center'>
@@ -13,10 +15,10 @@ const ProductListing = () => {
       </header>
       <main className="max-w-7xl mx-auto px-6 py-10 flex gap-12 items-start">
         <section className='w-1/2'>
-        <ProductListingForm />
+        <ProductListingForm setGeneratedOutput={setGeneratedOutput} />
         </section>
         <section className='w-1/2'>
-        <ListingOutput />
+        <ListingOutput generatedOutput={generatedOutput} />
         </section>
       </main>
     </div>
