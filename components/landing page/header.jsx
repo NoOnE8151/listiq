@@ -66,7 +66,7 @@ const Header = () => {
             className="
           flex items-center gap-3 
           bg-white/90 backdrop-blur-md
-          px-3 py-2
+          md:px-3 md:py-2
           rounded-full
           border border-gray-200
           shadow-sm
@@ -79,9 +79,9 @@ const Header = () => {
             <img
               src={user?.imageUrl}
               alt="profile"
-              className="rounded-full w-8 h-8 object-cover"
+              className="rounded-full md:w-8 md:h-8 w-10 h-10 object-cover"
             />
-            <h2 className="font-semibold text-gray-700">{user?.username}</h2>
+            <h2 className="font-semibold text-gray-700 hidden md:block">{user?.username}</h2>
           </button>
 
           {/* Dropdown */}
@@ -119,7 +119,7 @@ const Header = () => {
           </ul>
         </div>
       </SignedIn>
-      <h1 className="font-riot text-3xl">
+      <h1 className="font-riot text-3xl hidden md:block">
         <span className="text-[#3FBBEB]">List</span>
         <span className="text-element">IQ</span>
       </h1>

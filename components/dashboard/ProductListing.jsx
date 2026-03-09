@@ -275,7 +275,7 @@ const ProductListingForm = ({ setGeneratedOutput }) => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 w-full">
       <div className="flex flex-col gap-1">
         <h3 className="text-muted-foreground text-sm">NEW LISTING</h3>
         <h4 className="text-2xl tracking-tight font-semibold">
