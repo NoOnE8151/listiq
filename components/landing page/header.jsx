@@ -105,9 +105,9 @@ const Header = () => {
         `}
           >
             <li>
-              <button className="w-full text-left px-5 py-3 text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer">
+              {/* <button className="w-full text-left px-5 py-3 text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer">
                 Listing History
-              </button>
+              </button> */}
             </li>
             <li>
                 <SignOutButton>
