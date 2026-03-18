@@ -29,7 +29,7 @@ const ListingOutput = ({ generatedOutput }) => {
     const text = data.bullets.join("\n");
     handleCopy(text, "bullets");
   };
-
+  
   return (
     <div ref={outputRef}>
       {/* Header */}
@@ -43,7 +43,7 @@ const ListingOutput = ({ generatedOutput }) => {
         </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm p-6 min-h-[600px] flex flex-col gap-6">
+      <div className="bg-white rounded-2xl shadow-sm p-6 min-h-150 flex flex-col gap-6">
         
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -55,7 +55,7 @@ const ListingOutput = ({ generatedOutput }) => {
 
         <div className="border-t border-gray-100" />
 
-        {data ? (
+        {data?.title || data?.bullets?.length ? (
           <div className="flex flex-col gap-8">
 
             {/* TITLE */}

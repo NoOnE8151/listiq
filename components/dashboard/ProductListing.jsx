@@ -5,6 +5,9 @@ import { useForm } from "react-hook-form";
 import getCategory from "@/utils/marketplace/get-categories";
 import handleRedirect from "@/utils/tools/redirect";
 import Confirmation from "./Confirmation";
+import GeneratingListingLoader from "./ListingLoader";
+import Link from "next/link";
+import removeCredit from "@/utils/user/credit/remove";
 
 const ProductListingForm = ({ setGeneratedOutput }) => {
   //handling confirmation popup
@@ -247,7 +250,21 @@ const ProductListingForm = ({ setGeneratedOutput }) => {
    }
 
   const [isGenerating, setIsGenerating] = useState(false);
+  const defaultGenerationError = 'Not enough credits';
+  const [generationError, setGenerationError] = useState(defaultGenerationError)
+  const [showgenerationError, setShowGenerationError] = useState(false)
   const onSubmit = async (data) => {
+
+    //checking if user have enough credits to generate lisitng
+    const credCheckRes = await fetch('/api/user/credit/validate')
+    const credCheck = await credCheckRes.json();
+    
+    if (credCheck.state === 'insufficient') {
+      setShowConfirmationPopup(false);
+      setShowGenerationError(true);
+      return;
+    }
+
     setIsGenerating(true);
     setShowConfirmationPopup(false);
     // payload
@@ -272,8 +289,12 @@ const ProductListingForm = ({ setGeneratedOutput }) => {
     console.log("genearted list is: \n", res);
     setGeneratedOutput(res.data); //send the generated output data to parent component
     setIsGenerating(false);
+    removeCredit()
   };
 
+  if (isGenerating) {
+    return <GeneratingListingLoader />
+  }
   return (
     <div className="flex flex-col gap-8 w-full">
       <div className="flex flex-col gap-1">
@@ -585,6 +606,20 @@ const ProductListingForm = ({ setGeneratedOutput }) => {
           {showConfirmationPopup && <Confirmation setShowConfirmationPopup={setShowConfirmationPopup} />}
         </div>
       </form>
+
+      {showgenerationError && <div className="fixed top-0 left-0 right-0 bottom-0 bg-black/60 flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center bg-white px-10 py-5 rounded-xl gap-5">
+
+        <h2 className="text-xl font-semibold">Unable to Generate Listing</h2>
+        <p>{generationError}</p>
+
+        <div className="flex justify-center gap-10 w-full">
+          <button onClick={() => setShowGenerationError(false)} className="bg-gray-200 font-semibold px-5 py-2 rounded-lg cursor-pointer">Close</button>
+          <Link href={'/credits'} className="bg-element text-white font-semibold px-5 py-2 rounded-lg" >Buy Credits</Link>
+        </div>
+      </div>
+      </div>}
+
     </div>
   );
 };
